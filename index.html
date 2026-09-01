@@ -25,7 +25,7 @@
 <body>
 
 <h1>Politique de confidentialité</h1>
-<p class="date">Race Planner — application Android. Dernière mise à jour : 26 août 2026 (procédure de suppression des données, adresse de contact).</p>
+<p class="date">Race Planner — application Android. Dernière mise à jour : 1er septembre 2026 (retrait de la fonction de débrief : plus aucun appel à Anthropic, plus de clé d’API conservée).</p>
 
 <p class="lede">
   Race Planner n'a pas de serveur, pas de compte utilisateur et ne collecte aucune donnée.
@@ -44,7 +44,7 @@
   <tr><th>Fichier</th><th>Contenu</th></tr>
   <tr>
     <td><code>agenda.json</code></td>
-    <td>Vos plans d'entraînement : courses visées, séances prévues, ce que vous avez déclaré avoir fait, vos notes de semaine, et les débriefs générés.</td>
+    <td>Vos plans d'entraînement : courses visées, séances prévues, ce que vous avez déclaré avoir fait, et vos notes de semaine.</td>
   </tr>
   <tr>
     <td><code>profile.json</code></td>
@@ -52,7 +52,7 @@
   </tr>
   <tr>
     <td><code>settings.json</code></td>
-    <td>Vos réglages : thème, rappels, et votre clé d'API Claude si vous en avez saisi une.</td>
+    <td>Vos réglages : thème, rappels, et le fait que la visite guidée ait déjà été vue.</td>
   </tr>
 </table>
 </div>
@@ -64,9 +64,10 @@
 <h2>Ce qui sort de l'appareil, et seulement à votre demande</h2>
 
 <p>
-  Hors de l'export vers votre agenda décrit plus bas, l'application ne contacte que deux services, aucun des deux ne nous appartient, et jamais sans une
-  action de votre part. Dans les deux cas vous utilisez <strong>vos propres identifiants</strong> :
-  la relation est entre vous et ces services, pas entre eux et nous.
+  Hors de l'export vers votre agenda décrit plus bas, l'application ne contacte qu'un seul service,
+  il ne nous appartient pas, et jamais sans une action de votre part. Vous y utilisez
+  <strong>vos propres identifiants</strong> : la relation est entre vous et ce service, pas entre lui
+  et nous.
 </p>
 
 <h3>Strava — si vous connectez votre compte</h3>
@@ -88,32 +89,15 @@
   « Effacer » supprime en plus vos identifiants d'API.
 </p>
 
-<h3>Anthropic — si vous demandez un débrief</h3>
-
-<p>
-  Le débrief d'une semaine est écrit par un modèle d'Anthropic, appelé avec <em>votre</em> clé d'API,
-  uniquement au moment où vous appuyez sur le bouton. Ce qui est envoyé à
-  <code>api.anthropic.com</code> est le texte de la semaine concernée : la course visée, le numéro et
-  la phase de la semaine, la liste des séances prévues avec leur sport, leur durée et ce que vous en
-  avez déclaré, le total réalisé, et la note que vous avez éventuellement écrite sur cette semaine.
-</p>
-
-<p>
-  <strong>Ni votre nom, ni votre adresse, ni aucun identifiant ne sont joints.</strong> Ces échanges
-  sont soumis aux
-  <a href="https://www.anthropic.com/legal/privacy">conditions de confidentialité d'Anthropic</a> et
-  aux réglages de votre propre compte. Sans clé d'API saisie, la fonction n'est pas proposée et aucun
-  appel n'est fait.
-</p>
-
 <h2>Sauvegarde automatique Android</h2>
 
 <p>
   Si la sauvegarde automatique d'Android est activée sur votre appareil, vos plans
-  (<code>agenda.json</code>) sont copiés vers votre espace Google Drive personnel, comme pour toute
-  application. <strong>Vos identifiants Strava et votre clé d'API Claude en sont explicitement
-  exclus</strong> et ne quittent jamais l'appareil par ce biais. Cette sauvegarde relève de votre
-  compte Google ; nous n'y avons aucun accès.
+  (<code>agenda.json</code>) et vos réglages (<code>settings.json</code>) sont copiés vers votre
+  espace Google Drive personnel, comme pour toute application. <strong>Vos identifiants Strava en
+  sont explicitement exclus</strong> — le fichier qui les contient (<code>profile.json</code>) n'est
+  jamais copié — et ils ne quittent donc jamais l'appareil par ce biais. Cette sauvegarde relève de
+  votre compte Google ; nous n'y avons aucun accès.
 </p>
 
 <h2>Export vers votre agenda</h2>
@@ -174,10 +158,6 @@
 <table>
   <tr><th>Ce que vous faites</th><th>Ce qui est supprimé</th></tr>
   <tr>
-    <td>Réglages → <strong>« Retirer la clé »</strong></td>
-    <td>Votre clé d'API Claude. La fonction de débrief n'est plus proposée et plus rien n'est envoyé à Anthropic.</td>
-  </tr>
-  <tr>
     <td>Profil → <strong>« Déconnecter »</strong></td>
     <td>Votre jeton d'accès Strava, les activités synchronisées, les zones de fréquence cardiaque reprises de Strava et la date de dernière synchronisation. Vos identifiants d'API Strava sont conservés, pour que reconnecter ne demande qu'un geste.</td>
   </tr>
@@ -187,11 +167,11 @@
   </tr>
   <tr>
     <td>Agenda → « Mes courses » → supprimer une course</td>
-    <td>Ce plan et toutes ses séances, y compris vos réponses de séance, vos notes de semaine et les débriefs générés pour ce plan.</td>
+    <td>Ce plan et toutes ses séances, y compris vos réponses de séance et vos notes de semaine.</td>
   </tr>
   <tr>
     <td><strong>Désinstaller l'application</strong></td>
-    <td>Les trois fichiers d'un coup, donc la totalité : plans, séances, réponses, notes, débriefs, réglages, identifiants Strava et clé d'API. Il ne reste rien sur l'appareil.</td>
+    <td>Les trois fichiers d'un coup, donc la totalité : plans, séances, réponses, notes, réglages et identifiants Strava. Il ne reste rien sur l'appareil.</td>
   </tr>
 </table>
 </div>
@@ -204,17 +184,11 @@
 <h3>Ce qui ne dépend pas de nous</h3>
 
 <p>
-  Trois choses peuvent subsister ailleurs, chez des tiers avec qui vous êtes déjà en relation. Nous
+  Deux choses peuvent subsister ailleurs, chez des tiers avec qui vous êtes déjà en relation. Nous
   n'y avons aucun accès et ne pouvons pas les supprimer à votre place :
 </p>
 
 <ul>
-  <li>
-    <strong>Ce que vous avez envoyé à Anthropic</strong> pour un débrief est parti avec <em>votre</em>
-    clé d'API et relève de votre propre compte Anthropic. La conservation et la suppression s'y
-    règlent, chez eux, selon leurs
-    <a href="https://www.anthropic.com/legal/privacy">conditions de confidentialité</a>.
-  </li>
   <li>
     <strong>Strava</strong> : l'application ne fait que lire, elle n'écrit jamais rien chez Strava.
     Pour lui retirer l'accès, révoquez l'application dans les réglages de votre compte Strava.
@@ -246,8 +220,8 @@
 <h2>Contact</h2>
 
 <p>
-  Pour toute question sur cette politique, ou pour signaler un contenu généré que vous jugez
-  inacceptable : <a href="mailto:support.blopdev@gmail.com">support.blopdev@gmail.com</a>.
+  Pour toute question sur cette politique :
+  <a href="mailto:support.blopdev@gmail.com">support.blopdev@gmail.com</a>.
 </p>
 
 </body>
