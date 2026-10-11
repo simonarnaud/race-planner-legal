@@ -25,12 +25,13 @@
 <body>
 
 <h1>Politique de confidentialité</h1>
-<p class="date">Race Planner — application Android. Dernière mise à jour : 2 septembre 2026 (ajout de la demande d’avis affichée par le Play Store, décrite plus bas).</p>
+<p class="date">Race Planner — application Android. Dernière mise à jour : 11 octobre 2026 (ajout de l’achat de la version premium par Google Play, décrit plus bas).</p>
 
 <p class="lede">
   Race Planner n'a pas de serveur, pas de compte utilisateur et ne collecte aucune donnée.
   Tout ce que l'application enregistre reste dans le stockage privé de votre appareil.
-  L'éditeur de l'application ne reçoit rien, ne consulte rien et ne conserve rien.
+  L'éditeur de l'application ne reçoit aucune de vos données d'entraînement. Si vous achetez la
+  version premium, il voit seulement la commande dans sa console Google Play.
 </p>
 
 <h2>Ce que l'application enregistre sur votre appareil</h2>
@@ -44,7 +45,7 @@
   <tr><th>Fichier</th><th>Contenu</th></tr>
   <tr>
     <td><code>agenda.json</code></td>
-    <td>Vos plans d'entraînement : courses visées, séances prévues, ce que vous avez déclaré avoir fait, et vos notes de semaine.</td>
+    <td>Vos plans d'entraînement : courses visées, séances prévues, ce que vous avez déclaré avoir fait, et vos notes de semaine. Le cas échéant, les plans mis de côté après le remboursement de la version premium, pour vous être rendus si vous la rachetez.</td>
   </tr>
   <tr>
     <td><code>profile.json</code></td>
@@ -64,7 +65,8 @@
 <h2>Ce qui sort de l'appareil, et seulement à votre demande</h2>
 
 <p>
-  Hors de l'export vers votre agenda et de la demande d'avis, tous deux décrits plus bas,
+  Hors de l'export vers votre agenda, de la demande d'avis et de l'achat de la version premium,
+  tous décrits plus bas,
   l'application ne contacte qu'un seul service, il ne nous appartient pas, et jamais sans une action
   de votre part. Vous y utilisez <strong>vos propres identifiants</strong> : la relation est entre
   vous et ce service, pas entre lui et nous.
@@ -138,6 +140,37 @@
   l'application. Vous pouvez simplement fermer la boîte ; rien n'est envoyé, et elle ne revient pas.
 </p>
 
+<h2>Achat de la version premium</h2>
+
+<p>
+  La version premium s'achète une fois, dans l'application, par Google Play. La fenêtre de paiement
+  appartient à Google : c'est le Play Store qui l'affiche, qui reçoit vos informations de paiement et
+  qui traite la commande, selon les conditions et la
+  <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a>.
+  <strong>L'application ne voit ni votre moyen de paiement, ni votre compte, ni votre adresse.</strong>
+</p>
+
+<p>
+  Ce que l'application reçoit du Play Store se limite à trois choses : si la version premium est
+  achetée, son prix affiché dans votre pays, et un jeton d'achat qu'elle renvoie au Play Store pour
+  confirmer la commande, comme Google l'exige. Ces informations restent sur votre appareil. L'éditeur,
+  lui, voit la commande dans sa console Google Play (son numéro, son pays et son montant), sans
+  aucune de vos données d'entraînement.
+</p>
+
+<p>
+  Pour gérer l'achat, l'application intègre la bibliothèque d'achat de Google (Google Play Billing),
+  qui contient un composant de diagnostic de Google. Lors de notre vérification du 11 octobre 2026,
+  l'application n'a ouvert aucune connexion vers Google. Cette bibliothèque ne reçoit de toute façon
+  aucune de vos données d'entraînement.
+</p>
+
+<p>
+  Si votre achat est remboursé, les plans créés grâce à la version premium sont retirés de l'agenda.
+  Ils sont conservés sur votre appareil et vous sont rendus si vous rachetez la version premium. Vos
+  autres plans ne sont pas touchés.
+</p>
+
 <h2>Ce que l'application ne fait pas</h2>
 
 <ul>
@@ -150,8 +183,9 @@
 
 <p>
   Les seules autorisations Android demandées sont l'accès réseau, l'envoi de notifications (à
-  l'activation des rappels, jamais avant) et le redémarrage des alarmes après un redémarrage du
-  téléphone.
+  l'activation des rappels, jamais avant), le redémarrage des alarmes après un redémarrage du
+  téléphone, et deux autorisations ajoutées par la bibliothèque d'achat de Google : la communication
+  avec le Play Store pour l'achat, et la consultation de l'état du réseau.
 </p>
 
 <h2>Enfants</h2>
@@ -211,7 +245,8 @@
   <li>
     <strong>Votre compte Google</strong> : la sauvegarde automatique d'Android et les séances
     exportées vers votre agenda y vivent, comme décrit plus haut. Elles se suppriment depuis ce
-    compte.
+    compte. L'historique de vos achats sur Google Play en fait partie : il est tenu par Google, pas
+    par nous.
   </li>
 </ul>
 
